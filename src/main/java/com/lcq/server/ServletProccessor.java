@@ -15,7 +15,7 @@ import com.lcq.constant.Constants;
 
 public class ServletProccessor {
 	@SuppressWarnings("rawtypes")
-	public void proccess(HttpRequest request, HttpResponse response) {
+	public void proccess(Request request, Response response) {
 		String uri = request.getUri();
 		String servletName = uri.substring(uri.lastIndexOf("/") + 1);
 		URLClassLoader ucloader = null;
@@ -41,11 +41,12 @@ public class ServletProccessor {
 			System.out.println(e.toString());
 		}
 		Servlet servlet = null;
-
+		RequestFade requestFade=new RequestFade(request);
+		ResponseFade responseFade=new ResponseFade(response);
 		try {
 			servlet = (Servlet) myClass.newInstance();
-			servlet.service((ServletRequest) request,
-					(ServletResponse) response);
+			servlet.service((ServletRequest) requestFade,
+					(ServletResponse) responseFade);
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}

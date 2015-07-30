@@ -35,10 +35,10 @@ public class HttpServer {
 				socket=serverSocket.accept();
 				input=socket.getInputStream();
 				out=socket.getOutputStream();
-				HttpRequest request=new HttpRequest(input);
+				Request request=new Request(input);
 				request.parse();
 				
-				HttpResponse response=new HttpResponse(out);
+				Response response=new Response(out);
 				response.setRequest(request);
 				
 				if(request.getUri().startsWith("/servlet")){
