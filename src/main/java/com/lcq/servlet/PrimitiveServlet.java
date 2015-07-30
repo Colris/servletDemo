@@ -8,22 +8,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
+//import org.apache.log4j.Logger;
 
 public class PrimitiveServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final Logger logger = Logger
-			.getLogger(PrimitiveServlet.class);
+//	private static final Logger logger = Logger
+//			.getLogger(PrimitiveServlet.class);
 
 	public PrimitiveServlet() {
 		super();
-		logger.info(this.getServletName() + "初始化");
+//		logger.info(this.getServletName() + "初始化");
 	}
 
 	public void init(ServletConfig config) throws ServletException {
 		System.out.println("----------call init method----------");
-		PropertyConfigurator.configure(PrimitiveServlet.class.getClassLoader().getResourceAsStream("config/log4j.properties"));
+//		PropertyConfigurator.configure(PrimitiveServlet.class.getClassLoader().getResourceAsStream("config/log4j.properties"));
 	}
 
 	protected void service(HttpServletRequest request,

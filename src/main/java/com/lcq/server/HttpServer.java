@@ -7,6 +7,9 @@ import java.net.Inet4Address;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+import com.lcq.http.Request;
+import com.lcq.http.Response;
+
 public class HttpServer {
 	private static final String SHUTDOWN_COMMAND="/SHUTDOWN";
 	private boolean shutdown=false;

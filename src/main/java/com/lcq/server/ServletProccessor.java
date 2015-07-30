@@ -12,6 +12,10 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
 import com.lcq.constant.Constants;
+import com.lcq.http.Request;
+import com.lcq.http.RequestFade;
+import com.lcq.http.Response;
+import com.lcq.http.ResponseFade;
 
 public class ServletProccessor {
 	@SuppressWarnings("rawtypes")
