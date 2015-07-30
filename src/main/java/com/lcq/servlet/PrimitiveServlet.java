@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 public class PrimitiveServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -22,6 +23,7 @@ public class PrimitiveServlet extends HttpServlet {
 
 	public void init(ServletConfig config) throws ServletException {
 		System.out.println("----------call init method----------");
+		PropertyConfigurator.configure(PrimitiveServlet.class.getClassLoader().getResourceAsStream("config/log4j.properties"));
 	}
 
 	protected void service(HttpServletRequest request,
